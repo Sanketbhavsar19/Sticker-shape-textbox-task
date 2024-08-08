@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
+import DrawingCanvas from './components/drawingcaves';
+// import Sticker from './components/sticker';
+//  import Textbox from './components/textbox';
+import Shapesbutton from './components/shapesbutton';
+
 function App() {
+  const [selectedShape, setSelectedShape] = useState(null);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+          {/* <Sticker/> */}
+          {/* <Textbox/> */}
+        
+          <Shapesbutton setSelectedShape={setSelectedShape} /> 
+          <DrawingCanvas  selectedShape={selectedShape}/>
+
     </div>
   );
 }
